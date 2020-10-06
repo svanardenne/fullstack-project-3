@@ -25,10 +25,37 @@ function displayJobRole() {
     }
 }
 
+//Controls the "Color" menu based on the selection 
+//in the "Design" menu
 function shirtMenuController() {
     if (designMenu.value === 'Select Theme') {
-        let emptyOption = '<option selected hidden>Please select a T-shirt theme</option>';
-        shirtColorsInput.insertAdjacentHTML('afterbegin', emptyOption);
+        shirtColorsInput.children[0].hidden = false;
+        shirtColorsInput.children[0].selected = true;
+        shirtColorsInput.children[1].hidden = true;
+        shirtColorsInput.children[2].hidden = true;
+        shirtColorsInput.children[3].hidden = true;
+        shirtColorsInput.children[4].hidden = true;
+        shirtColorsInput.children[5].hidden = true;
+        shirtColorsInput.children[6].hidden = true;
+    } else if (designMenu.value === 'js puns') {
+        shirtColorsInput.children[0].hidden = true;
+        shirtColorsInput.children[1].selected = true;
+        shirtColorsInput.children[1].hidden = false;
+        shirtColorsInput.children[2].hidden = false;
+        shirtColorsInput.children[3].hidden = false;
+        shirtColorsInput.children[4].hidden = true;
+        shirtColorsInput.children[5].hidden = true;
+        shirtColorsInput.children[6].hidden = true;
+    } else if (designMenu.value === 'heart js') {
+        shirtColorsInput.children[0].hidden = true;
+        shirtColorsInput.children[1].hidden = true;
+        shirtColorsInput.children[2].hidden = true;
+        shirtColorsInput.children[3].hidden = true;
+        shirtColorsInput.children[4].selected = true;
+        shirtColorsInput.children[4].hidden = false;
+        shirtColorsInput.children[5].hidden = false;
+        shirtColorsInput.children[6].hidden = false;
+
     }
 }
 
@@ -41,10 +68,8 @@ jobRoleMenu.addEventListener('click', () => {
     displayJobRole();
 });
 
-window.addEventListener('load', () => {
-    shirtMenuController();
-});
-
+//Adds an event listener to the "Design" drop-down
+//and calls shirtMenuController()
 designMenu.addEventListener('click', () => {
     shirtMenuController();
 });
