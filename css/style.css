@@ -170,6 +170,13 @@ option {
   Helper Classes
 ==================================== */
 
+.error {
+	border:1px solid red;
+}
+.error:focus {
+	border:1px solid red;
+}
+
 .disabled {
 	color: slategrey !important;
 	text-decoration: line-through;

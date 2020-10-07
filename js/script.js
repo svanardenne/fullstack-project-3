@@ -3,6 +3,7 @@
 /* ============================================= */
 
 //Global Variables
+const form = document.querySelector('form');
 const jobRoleText = document.getElementById('other-title');
 const jobRoleMenu = document.getElementById('title');
 
@@ -101,6 +102,20 @@ function paymentSelector() {
         bitcoin.style.display = 'block'
     }
 }
+
+//Validates the Name field
+function nameValidator() {
+    const name = document.getElementById('name');
+    const value = name.value;
+    console.log(value);
+    if (value === '') {
+        name.className = 'error';
+        return false;
+        
+    }
+}
+
+//Validates the Email field
 
 /*============== Event Listeners ==============*/
 
