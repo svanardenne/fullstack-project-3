@@ -82,7 +82,7 @@ document.querySelector('.activities').addEventListener('click', (e) => {
     const clickedDateTime = clicked.getAttribute('data-day-and-time');
     const totalCost = document.querySelector('.js-total');
     let total = 0;
-    totalCost.textContent = `$${total}`
+    totalCost.textContent = `$${total.toFixed(2)}`
     console.log(clicked);
     console.log(clickedDateTime);
     for (let i = 0; i < checkboxes.length; i++) {
@@ -95,10 +95,10 @@ document.querySelector('.activities').addEventListener('click', (e) => {
                 checkboxes[i].disabled = false;
             }
         }
-        totalCost.textContent = `$${total}`
+        totalCost.textContent = `$${total.toFixed(2)}`
         if (checkboxes[i].checked) {
             total += cost;
-            totalCost.textContent = `$${total}`
+            totalCost.textContent = `$${total.toFixed(2)}`
         }
     }
 });
