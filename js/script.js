@@ -111,7 +111,6 @@ function nameValidator() {
     if (value === '') {
         name.className = 'error';
         return false;
-        
     }
 }
 
