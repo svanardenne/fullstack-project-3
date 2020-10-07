@@ -12,9 +12,21 @@ const shirtColorsInput = document.getElementById('color');
 
 const checkboxes = document.querySelectorAll('.activities input');
 
+const payment = document.getElementById('payment');
+const creditCard = document.getElementById('credit-card');
+const paypal = document.getElementById('paypal');
+const bitcoin = document.getElementById('bitcoin');
+
+
+/*============== On load ==============*/
+
 //Hides the Job Role Menu on page load
 jobRoleText.style.display = 'none';
 
+//Hides all payment options on page load
+creditCard.style.display = 'none';
+paypal.style.display = 'none';
+bitcoin.style.display = 'none';
 
 /*============== Functions ==============*/
 
@@ -62,6 +74,26 @@ function shirtMenuController() {
     }
 }
 
+//Displays payment info based on selection
+function paymentSelector() {
+    if (payment.value === 'select method') {
+        creditCard.style.display = 'none';
+        paypal.style.display = 'none';
+        bitcoin.style.display = 'none';
+    } else if (payment.value === 'credit card') {
+        creditCard.style.display = 'block';
+        paypal.style.display = 'none';
+        bitcoin.style.display = 'none';
+    } else if (payment.value === 'paypal') {
+        paypal.style.display = 'block';
+        creditCard.style.display = 'none';
+        bitcoin.style.display = 'none';
+    } else if (payment.value === 'bitcoin') {
+        creditCard.style.display = 'none';
+        paypal.style.display = 'none';
+        bitcoin.style.display = 'block'
+    }
+}
 
 /*============== Event Listeners ==============*/
 
@@ -105,4 +137,12 @@ document.querySelector('.activities').addEventListener('click', (e) => {
             totalCost.textContent = `$${total.toFixed(2)}`
         }
     }
+});
+
+//Adds an event listener to the "payment" section
+//Disables the "select Method" option
+//Calls PaymentSelctor();
+payment.addEventListener('click', () => {
+    payment.children[0].disabled = true;
+    paymentSelector();
 });
