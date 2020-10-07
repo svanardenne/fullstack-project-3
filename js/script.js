@@ -107,14 +107,30 @@ function paymentSelector() {
 function nameValidator() {
     const name = document.getElementById('name');
     const value = name.value;
-    console.log(value);
     if (value === '') {
         name.className = 'error';
         return false;
+    } else {
+        name.className = '';
+        return true
     }
 }
 
 //Validates the Email field
+function emailValidator() {
+    const email = document.getElementById('mail');
+    const value = email.value;
+    const validate = /\w+@\w+\.\w+/g;
+    const result = validate.test(value);
+    console.log(result);
+    if (result === false) {
+        email.className = 'error';
+        return false;
+    } else {
+        email.className = '';
+        return true;
+    }
+}
 
 /*============== Event Listeners ==============*/
 
