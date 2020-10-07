@@ -122,12 +122,23 @@ function emailValidator() {
     const value = email.value;
     const validate = /\w+@\w+\.\w+/g;
     const result = validate.test(value);
-    console.log(result);
     if (result === false) {
         email.className = 'error';
         return false;
     } else {
         email.className = '';
+        return true;
+    }
+}
+
+function activityValidator() {
+    const total = document.querySelector('.js-total');
+    const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
+    if (checkbox.length === 0) {
+        total.style.color = 'red';
+        return false;
+    } else {
+        total.style.color = 'rgba(6, 49, 68, 0.9)';
         return true;
     }
 }
@@ -157,8 +168,6 @@ document.querySelector('.activities').addEventListener('click', (e) => {
     const totalCost = document.querySelector('.js-total');
     let total = 0;
     totalCost.textContent = `$${total.toFixed(2)}`
-    console.log(clicked);
-    console.log(clickedDateTime);
     for (let i = 0; i < checkboxes.length; i++) {
         let cost = parseInt(checkboxes[i].getAttribute('data-cost'));
         let dateTimeType = checkboxes[i].getAttribute('data-day-and-time');
