@@ -131,6 +131,7 @@ function emailValidator() {
     }
 }
 
+//Checks to see if any checkboxes have been checked
 function activityValidator() {
     const total = document.querySelector('.js-total');
     const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
