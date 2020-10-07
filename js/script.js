@@ -77,6 +77,10 @@ designMenu.addEventListener('click', () => {
     shirtMenuController();
 });
 
+//Adds an event listener to the "activities" section
+//and disables conflicting events when checked
+//Also adds the total price of checked events and
+//displays it at the bottom
 document.querySelector('.activities').addEventListener('click', (e) => {
     const clicked = e.target;
     const clickedDateTime = clicked.getAttribute('data-day-and-time');
