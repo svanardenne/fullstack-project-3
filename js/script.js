@@ -24,6 +24,12 @@ const bitcoin = document.getElementById('bitcoin');
 //Hides the Job Role Menu on page load
 jobRoleText.style.display = 'none';
 
+//Disables the default menu option on "Payment
+//and "Design" menus
+designMenu.children[0].hidden = true;
+payment.children[0].hidden = true;
+
+
 //Hides all payment options on page load
 creditCard.style.display = 'none';
 paypal.style.display = 'none';
@@ -107,6 +113,7 @@ jobRoleMenu.addEventListener('click', () => {
 //Adds an event listener to the "Design" drop-down
 //and calls shirtMenuController()
 designMenu.addEventListener('click', () => {
+    designMenu.children[0].disabled = true;
     shirtMenuController();
 });
 
