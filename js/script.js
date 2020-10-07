@@ -5,9 +5,12 @@
 //Global Variables
 const jobRoleText = document.getElementById('other-title');
 const jobRoleMenu = document.getElementById('title');
+
 const designMenu = document.getElementById('design');
 const shirtColorsMenu = document.getElementById('shirt-colors');
 const shirtColorsInput = document.getElementById('color');
+
+const checkboxes = document.querySelectorAll('.activities input');
 
 //Hides the Job Role Menu on page load
 jobRoleText.style.display = 'none';
@@ -72,4 +75,30 @@ jobRoleMenu.addEventListener('click', () => {
 //and calls shirtMenuController()
 designMenu.addEventListener('click', () => {
     shirtMenuController();
+});
+
+document.querySelector('.activities').addEventListener('click', (e) => {
+    const clicked = e.target;
+    const clickedDateTime = clicked.getAttribute('data-day-and-time');
+    const totalCost = document.querySelector('.js-total');
+    let total = 0;
+    totalCost.textContent = `$${total}`
+    console.log(clicked);
+    console.log(clickedDateTime);
+    for (let i = 0; i < checkboxes.length; i++) {
+        let cost = parseInt(checkboxes[i].getAttribute('data-cost'));
+        let dateTimeType = checkboxes[i].getAttribute('data-day-and-time');
+        if (clickedDateTime === dateTimeType && clicked !== checkboxes[i]) {
+            if (clicked.checked) {
+                checkboxes[i].disabled = true;
+            } else {
+                checkboxes[i].disabled = false;
+            }
+        }
+        totalCost.textContent = `$${total}`
+        if (checkboxes[i].checked) {
+            total += cost;
+            totalCost.textContent = `$${total}`
+        }
+    }
 });
