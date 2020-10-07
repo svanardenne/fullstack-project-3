@@ -170,6 +170,11 @@ option {
   Helper Classes
 ==================================== */
 
+.disabled {
+	color: slategrey !important;
+	text-decoration: line-through;
+}
+
 .is-hidden {
 	display: none;
 }

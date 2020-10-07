@@ -11,6 +11,7 @@ const shirtColorsMenu = document.getElementById('shirt-colors');
 const shirtColorsInput = document.getElementById('color');
 
 const checkboxes = document.querySelectorAll('.activities input');
+const checkLabels = document.querySelectorAll('.activities label');
 
 const payment = document.getElementById('payment');
 const creditCard = document.getElementById('credit-card');
@@ -127,8 +128,10 @@ document.querySelector('.activities').addEventListener('click', (e) => {
         if (clickedDateTime === dateTimeType && clicked !== checkboxes[i]) {
             if (clicked.checked) {
                 checkboxes[i].disabled = true;
+                checkLabels[i].className = 'disabled';
             } else {
                 checkboxes[i].disabled = false;
+                checkLabels[i].className = '';
             }
         }
         totalCost.textContent = `$${total.toFixed(2)}`
