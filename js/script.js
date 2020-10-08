@@ -147,7 +147,7 @@ function activityValidator() {
         errorMessage.style.display = 'inline-block';
         return false;
     } else {
-        total.style.color = 'rgba(6, 49, 68, 0.9)';
+        total.style.color = '#FFF';
         errorMessage.style.display = 'none';
         return true;
     }
