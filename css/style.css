@@ -182,6 +182,7 @@ option {
 .card-message,
 .zip-message,
 .cvv-message {
+	font-size: 0.9em;
 	color: red;
 }
 
