@@ -189,6 +189,18 @@ function cvvValidator() {
     }
 }
 
+//Calls all the validation funtions
+function validator() {
+    nameValidator();
+    emailValidator();
+    activityValidator();
+    if (payment.value === 'credit card') {
+        creditValidator();
+        zipValidator();
+        cvvValidator();
+    }
+}
+
 /*============== Event Listeners ==============*/
 
 //Adds an event listener to the "Job Role" drop-down
