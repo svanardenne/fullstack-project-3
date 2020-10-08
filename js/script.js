@@ -199,6 +199,22 @@ function validator() {
         zipValidator();
         cvvValidator();
     }
+    if (payment.value === 'credit card' 
+    && nameValidator() 
+    && emailValidator() 
+    && activityValidator() 
+    && creditValidator() 
+    && zipValidator() 
+    && cvvValidator()) {
+        return true;
+    } else if (payment.value !== 'credit card' 
+    && nameValidator() 
+    && emailValidator() 
+    && activityValidator()) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /*============== Event Listeners ==============*/
@@ -252,4 +268,11 @@ document.querySelector('.activities').addEventListener('click', (e) => {
 payment.addEventListener('click', () => {
     payment.children[0].disabled = true;
     paymentSelector();
+});
+
+//Event listenser for submit which calls
+//The main Validator() function
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    validator();
 });
