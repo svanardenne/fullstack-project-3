@@ -8,6 +8,7 @@ const jobRoleText = document.getElementById('other-title');
 const jobRoleMenu = document.getElementById('title');
 
 const designMenu = document.getElementById('design');
+const colorMenu = document.getElementById('shirt-colors');
 const shirtColorsMenu = document.getElementById('shirt-colors');
 const shirtColorsInput = document.getElementById('color');
 
@@ -36,6 +37,10 @@ creditCard.style.display = 'none';
 paypal.style.display = 'none';
 bitcoin.style.display = 'none';
 
+if (designMenu.value === 'Select Theme') {
+    colorMenu.style.display = 'none';
+}
+
 /*============== Functions ==============*/
 
 //Displays the "Job Role" Input when "other" is 
@@ -61,6 +66,7 @@ function shirtMenuController() {
         shirtColorsInput.children[5].hidden = true;
         shirtColorsInput.children[6].hidden = true;
     } else if (designMenu.value === 'js puns') {
+        colorMenu.style.display = 'block';
         shirtColorsInput.children[0].hidden = true;
         shirtColorsInput.children[1].selected = true;
         shirtColorsInput.children[1].hidden = false;
@@ -70,6 +76,7 @@ function shirtMenuController() {
         shirtColorsInput.children[5].hidden = true;
         shirtColorsInput.children[6].hidden = true;
     } else if (designMenu.value === 'heart js') {
+        colorMenu.style.display = 'block';
         shirtColorsInput.children[0].hidden = true;
         shirtColorsInput.children[1].hidden = true;
         shirtColorsInput.children[2].hidden = true;
