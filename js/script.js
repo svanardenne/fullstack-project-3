@@ -167,8 +167,13 @@ function creditValidator() {
     const errorMessage = document.querySelector('.card-message');
     const validate = /^\d{13,16}$/g;
     const result = validate.test(value);
-    if (result === false) {
+    if (creditField.value === '') {
         creditField.className = 'error';
+        errorMessage.textContent = 'Please enter a credit card number';
+        errorMessage.style.display = 'inline-block';
+    } else if (result === false) {
+        creditField.className = 'error';
+        errorMessage.textContent = 'Must be between 13 and 16 digits and contain only numbers';
         errorMessage.style.display = 'inline-block';
         return false;
     } else {
@@ -294,6 +299,8 @@ payment.addEventListener('click', () => {
     payment.children[0].disabled = true;
     paymentSelector();
 });
+
+
 
 //Event listenser for submit which calls
 //The main Validator() function
