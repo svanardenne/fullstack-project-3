@@ -159,6 +159,21 @@ function creditValidator() {
     }
 }
 
+//Validates the Zip Code Field
+function zipValidator() {
+    const zipField = document.getElementById('zip');
+    const value = zipField.value;
+    const validate = /^\d{5}$/g;
+    const result = validate.test(value);
+    if (result === false) {
+        zipField.className = 'error';
+        return false;
+    } else {
+        zipField.className = '';
+        return true;
+    }
+}
+
 /*============== Event Listeners ==============*/
 
 //Adds an event listener to the "Job Role" drop-down
