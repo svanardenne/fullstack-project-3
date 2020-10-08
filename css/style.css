@@ -170,6 +170,21 @@ option {
   Helper Classes
 ==================================== */
 
+.name-label,
+.email-label,
+.cost-label {
+	display: inline-block;
+}
+
+.name-message,
+.email-message,
+.activity-message,
+.card-message,
+.zip-message,
+.cvv-message {
+	color: red;
+}
+
 .error {
 	border:1px solid red;
 }

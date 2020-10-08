@@ -112,7 +112,7 @@ function nameValidator() {
         return false;
     } else {
         name.className = '';
-        return true
+        return true;
     }
 }
 

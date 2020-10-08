@@ -19,10 +19,12 @@
       <fieldset>         
         <legend>Basic Info</legend>
         
-        <label for="name">Name:</label>
+        <label class="name-label" for="name">Name:</label>
+        <span class="name-message">Name field cannot be blank</span>
         <input type="text" id="name" name="user-name" autofocus="autofocus">
         
-        <label for="mail">Email:</label>
+        <label class="email-label" for="mail">Email:</label>
+        <span class="name-message">Invalid Email</span>
         <input type="email" id="mail" name="user-email">
         
         <label for="title">Job Role</label>
@@ -104,8 +106,9 @@
             <input type="checkbox" name="npm" data-day-and-time="Wednesday 1pm-4pm" data-cost="100"> 
             npm Workshop — Wednesday 1pm-4pm, $100
           </label>
-          <p>Total Cost:</p>
-          <span class="js-total">$0.00</span>
+          <p class ="cost-label">Total Cost:</p>
+          <span class="activity-message">Please choose at least one activity</span>
+          <p class="js-total">$0.00</p>
                   	
       </fieldset>
       <fieldset>
@@ -123,17 +126,20 @@
 
           <div class="col-6 col">
             <label for="cc-num">Card Number:</label>
-        	  <input id="cc-num" name="user-cc-num" type="text">
+            <input id="cc-num" name="user-cc-num" type="text">
+            <span class="card-message">Must be between 13 and 16 digits</span>
           </div>
 
           <div class="col-3 col">
             <label for="zip">Zip Code:</label>
             <input id="zip" name="user-zip" type="text"> 
+            <span class="zip-message">Must be 5 digits</span>
           </div>
 
           <div class="col-3 col">
             <label for="cvv">CVV:</label>
             <input id="cvv" name="user-cvv" type="text"> 
+            <span class="cvv-message">Must be 3 digits</span>
           </div>
 
           <label for="exp-month">Expiration Date:</label>
