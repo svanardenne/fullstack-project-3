@@ -174,6 +174,21 @@ function zipValidator() {
     }
 }
 
+//Validates the CVV Field
+function cvvValidator() {
+    const cvvField = document.getElementById('cvv');
+    const value = cvvField.value;
+    const validate = /^\d{3}$/g;
+    const result = validate.test(value);
+    if (result === false) {
+        cvvField.className = 'error';
+        return false;
+    } else {
+        cvvField.className = '';
+        return true;
+    }
+}
+
 /*============== Event Listeners ==============*/
 
 //Adds an event listener to the "Job Role" drop-down
