@@ -144,6 +144,21 @@ function activityValidator() {
     }
 }
 
+//Validates the Card Number Field
+function creditValidator() {
+    const creditField = document.getElementById('cc-num');
+    const value = creditField.value;
+    const validate = /^\d{13,16}$/g;
+    const result = validate.test(value);
+    if (result === false) {
+        creditField.className = 'error';
+        return false;
+    } else {
+        creditField.className = '';
+        return true;
+    }
+}
+
 /*============== Event Listeners ==============*/
 
 //Adds an event listener to the "Job Role" drop-down
