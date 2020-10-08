@@ -114,6 +114,7 @@ function nameValidator() {
         return false;
     } else {
         name.className = '';
+        errorMessage.style.display = 'none';
         return true;
     }
 }
@@ -131,6 +132,7 @@ function emailValidator() {
         return false;
     } else {
         email.className = '';
+        errorMessage.style.display = 'none';
         return true;
     }
 }
@@ -146,6 +148,7 @@ function activityValidator() {
         return false;
     } else {
         total.style.color = 'rgba(6, 49, 68, 0.9)';
+        errorMessage.style.display = 'none';
         return true;
     }
 }
@@ -163,6 +166,7 @@ function creditValidator() {
         return false;
     } else {
         creditField.className = '';
+        errorMessage.style.display = 'none';
         return true;
     }
 }
@@ -180,6 +184,7 @@ function zipValidator() {
         return false;
     } else {
         zipField.className = '';
+        errorMessage.style.display = 'none';
         return true;
     }
 }
@@ -197,6 +202,7 @@ function cvvValidator() {
         return false;
     } else {
         cvvField.className = '';
+        errorMessage.style.display = 'none';
         return true;
     }
 }
