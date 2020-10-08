@@ -107,8 +107,10 @@ function paymentSelector() {
 function nameValidator() {
     const name = document.getElementById('name');
     const value = name.value;
+    const errorMessage = document.querySelector('.name-message');
     if (value === '') {
         name.className = 'error';
+        errorMessage.style.display = 'inline-block';
         return false;
     } else {
         name.className = '';
@@ -120,10 +122,12 @@ function nameValidator() {
 function emailValidator() {
     const email = document.getElementById('mail');
     const value = email.value;
+    const errorMessage = document.querySelector('.email-message');
     const validate = /\w+@\w+\.\w+/g;
     const result = validate.test(value);
     if (result === false) {
         email.className = 'error';
+        errorMessage.style.display = 'inline-block';
         return false;
     } else {
         email.className = '';
@@ -135,8 +139,10 @@ function emailValidator() {
 function activityValidator() {
     const total = document.querySelector('.js-total');
     const checkbox = document.querySelectorAll('input[type="checkbox"]:checked');
+    const errorMessage = document.querySelector('.activity-message');
     if (checkbox.length === 0) {
         total.style.color = 'red';
+        errorMessage.style.display = 'inline-block';
         return false;
     } else {
         total.style.color = 'rgba(6, 49, 68, 0.9)';
@@ -148,10 +154,12 @@ function activityValidator() {
 function creditValidator() {
     const creditField = document.getElementById('cc-num');
     const value = creditField.value;
+    const errorMessage = document.querySelector('.card-message');
     const validate = /^\d{13,16}$/g;
     const result = validate.test(value);
     if (result === false) {
         creditField.className = 'error';
+        errorMessage.style.display = 'inline-block';
         return false;
     } else {
         creditField.className = '';
@@ -163,10 +171,12 @@ function creditValidator() {
 function zipValidator() {
     const zipField = document.getElementById('zip');
     const value = zipField.value;
+    const errorMessage = document.querySelector('.zip-message');
     const validate = /^\d{5}$/g;
     const result = validate.test(value);
     if (result === false) {
         zipField.className = 'error';
+        errorMessage.style.display = 'inline-block';
         return false;
     } else {
         zipField.className = '';
@@ -178,10 +188,12 @@ function zipValidator() {
 function cvvValidator() {
     const cvvField = document.getElementById('cvv');
     const value = cvvField.value;
+    const errorMessage = document.querySelector('.cvv-message');
     const validate = /^\d{3}$/g;
     const result = validate.test(value);
     if (result === false) {
         cvvField.className = 'error';
+        errorMessage.style.display = 'inline-block';
         return false;
     } else {
         cvvField.className = '';
