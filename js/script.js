@@ -273,6 +273,8 @@ payment.addEventListener('click', () => {
 //Event listenser for submit which calls
 //The main Validator() function
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
     validator();
+    if (validator() === false) {
+        e.preventDefault();
+    }
 });
