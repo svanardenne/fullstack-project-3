@@ -43,9 +43,15 @@ creditCard.style.display = 'none';
 paypal.style.display = 'none';
 bitcoin.style.display = 'none';
 
+
+//Hides the color menu on load
 if (designMenu.value === 'Select Theme') {
     colorMenu.style.display = 'none';
 }
+
+//Sets Credit Card as default payment method
+creditCard.style.display = 'block';
+
 
 /*============== Functions ==============*/
 
@@ -247,6 +253,7 @@ function validator() {
         return false;
     }
 }
+
 
 /*============== Event Listeners ==============*/
 
