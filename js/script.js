@@ -4,6 +4,12 @@
 
 //Global Variables
 const form = document.querySelector('form');
+const name = document.getElementById('name');
+const email = document.getElementById('mail');
+const creditField = document.getElementById('cc-num');
+const zipField = document.getElementById('zip');
+const cvvField = document.getElementById('cvv');
+
 const jobRoleText = document.getElementById('other-title');
 const jobRoleMenu = document.getElementById('title');
 
@@ -112,7 +118,6 @@ function paymentSelector() {
 
 //Validates the Name field
 function nameValidator() {
-    const name = document.getElementById('name');
     const value = name.value;
     const errorMessage = document.querySelector('.name-message');
     if (value === '') {
@@ -128,7 +133,6 @@ function nameValidator() {
 
 //Validates the Email field
 function emailValidator() {
-    const email = document.getElementById('mail');
     const value = email.value;
     const errorMessage = document.querySelector('.email-message');
     const validate = /\w+@\w+\.\w+/g;
@@ -162,7 +166,6 @@ function activityValidator() {
 
 //Validates the Card Number Field
 function creditValidator() {
-    const creditField = document.getElementById('cc-num');
     const value = creditField.value;
     const errorMessage = document.querySelector('.card-message');
     const validate = /^\d{13,16}$/g;
@@ -185,7 +188,6 @@ function creditValidator() {
 
 //Validates the Zip Code Field
 function zipValidator() {
-    const zipField = document.getElementById('zip');
     const value = zipField.value;
     const errorMessage = document.querySelector('.zip-message');
     const validate = /^\d{5}$/g;
@@ -203,7 +205,6 @@ function zipValidator() {
 
 //Validates the CVV Field
 function cvvValidator() {
-    const cvvField = document.getElementById('cvv');
     const value = cvvField.value;
     const errorMessage = document.querySelector('.cvv-message');
     const validate = /^\d{3}$/g;
@@ -300,7 +301,21 @@ payment.addEventListener('click', () => {
     paymentSelector();
 });
 
-
+//Checks validators in real time as the 
+//user types
+form.addEventListener('input', (e) => {
+    if (e.target === name) {
+        nameValidator();
+    } else if (e.target === email) {
+        emailValidator();
+    } else if (e.target === creditField) {
+        creditValidator();
+    } else if (e.target === zipField) {
+        zipValidator();
+    } else if (e.target === cvvField) {
+        cvvValidator();
+    }
+});
 
 //Event listenser for submit which calls
 //The main Validator() function
