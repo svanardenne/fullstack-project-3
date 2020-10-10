@@ -141,7 +141,7 @@ function nameValidator() {
 function emailValidator() {
     const value = email.value;
     const errorMessage = document.querySelector('.email-message');
-    const validate = /\w+@\w+\.\w+/g;
+    const validate = /\w+@\w+\.\w{2}/g;
     const result = validate.test(value);
     if (result === false) {
         email.className = 'error';
