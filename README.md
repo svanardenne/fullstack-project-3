@@ -1,1 +1,2 @@
-# fullstack-project-3
+# Online Registration Form
+A responsive form using JavaScript validations
